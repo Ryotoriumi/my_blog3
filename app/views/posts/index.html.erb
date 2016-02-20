@@ -1,0 +1,10 @@
+<h1>Ore-no-blog</h1>
+
+<ul>
+<% @posts.each do |post| %>
+  <li>
+      <%= link_to post.title, post_path(post.id) %>
+      <%= link_to '削除する', post_path(post.id), method: :delete, data: { confirm: '削除しますか？' } %>
+  </li>
+<% end %>
+</ul>
