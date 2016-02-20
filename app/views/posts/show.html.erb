@@ -8,5 +8,5 @@
   <b>カテゴリ：<%= @post.category %></b>
 </p>
 
-<%= link_to '一覧に戻る', posts_path %>
-<%= link_to '削除する', post_path(@post), method: :delete, data: { confirm: '削除しますか？' } %>
+<%= link_to '一覧に戻る', posts_path, class: "btn btn-default" %>
+<%= link_to '削除する', post_path(@post), method: :delete, data: { confirm: '削除しますか？' }, class: "btn btn-default" %>

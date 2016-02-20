@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/posts' => 'posts#index'
   get '/posts/new' => 'posts#new'
-  get 'posts/:id/edit' => 'posts#edit'
+  get 'posts/:id/edit' => 'posts#edit', as: :edit
   get '/posts/:id' => 'posts#show', as: :post
   patch '/posts/:id' => 'posts#update'
   delete 'posts/:id' => 'posts#destroy'

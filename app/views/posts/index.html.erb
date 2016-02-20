@@ -1,10 +1,31 @@
-<h1>Ore-no-blog</h1>
+<div style="background-color: #ffff00">
+  <h1>ORE-NO-BLOG</h1>
+</div>
 
-<ul>
-<% @posts.each do |post| %>
-  <li>
-      <%= link_to post.title, post_path(post.id) %>
-      <%= link_to '削除する', post_path(post.id), method: :delete, data: { confirm: '削除しますか？' } %>
-  </li>
-<% end %>
-</ul>
+<div class="row">
+
+  <div class="col-sm-8 col-md-8">
+  <ul>
+    <% @posts.each do |post| %>
+      <h2><%= link_to post.title, post_path(post.id) %></h2>
+      <p><%= truncate post.body%></p>
+          <%= link_to '続きを読む', post_path(post.id), class: "btn btn-primary" %>
+          <%= link_to '編集する', edit_path(post.id), class: "btn btn-default" %>
+          <%= link_to '削除する', post_path(post.id), method: :delete, data: { confirm: '削除しますか？' } , class: "btn btn-default"%>
+      </li>
+      <br>
+      <br>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="col-sm-4 col-md-4">
+    <h3>書いている人？</h3>
+      <p><%= @author.name %></p>
+    <h3>どんな人？</h3>
+      <p><%= @author.description %></p>
+      <p><%= image_tag @author.image_url, class: 'img-responsive' %></p>
+    </ul>
+  </div>
+
+</div>
